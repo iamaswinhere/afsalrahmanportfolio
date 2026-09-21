@@ -1,6 +1,15 @@
 /**
  * AFSAL RAHMAN — MINIMAL PORTFOLIO SCRIPT
- * Refined Micro-Interactions, Ambient Canvas, Smooth Scroll Physics & Command Deck
+ * Features:
+ * - Smooth Parallax Scroll Engine (Ambient glow & Content depth)
+ * - Ambient Particle Mesh Canvas
+ * - Minimal Custom Cursor & Magnetic Hover States
+ * - Subtle 3D Card Perspective Tilt
+ * - Subtitle Typewriter Loop
+ * - Intersection Observer Scroll Reveals & Metric Counters
+ * - Interactive Skill Matrix Category Filtering
+ * - Interactive Minimal Command Deck (CLI)
+ * - Case Study Modals & Direct Clipboard Copying
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,100 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // =========================================================================
-  // 1. REFINED WEB AUDIO SYNTHESIZER (SUBTLE MICRO-SOUNDS)
-  // =========================================================================
-  class MinimalAudioEngine {
-    constructor() {
-      this.enabled = false;
-      this.ctx = null;
-    }
-
-    init() {
-      if (!this.ctx) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        this.ctx = new AudioContext();
-      }
-      if (this.ctx && this.ctx.state === 'suspended') {
-        this.ctx.resume();
-      }
-    }
-
-    toggle() {
-      this.init();
-      this.enabled = !this.enabled;
-      return this.enabled;
-    }
-
-    playHover() {
-      if (!this.enabled || !this.ctx) return;
-      try {
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(650, this.ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(900, this.ctx.currentTime + 0.03);
-        gain.gain.setValueAtTime(0.01, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.03);
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-        osc.start();
-        osc.stop(this.ctx.currentTime + 0.03);
-      } catch (e) {}
-    }
-
-    playClick() {
-      if (!this.enabled || !this.ctx) return;
-      try {
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(320, this.ctx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(140, this.ctx.currentTime + 0.06);
-        gain.gain.setValueAtTime(0.025, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.06);
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-        osc.start();
-        osc.stop(this.ctx.currentTime + 0.06);
-      } catch (e) {}
-    }
-  }
-
-  const audio = new MinimalAudioEngine();
-  const audioToggle = document.getElementById('audioToggle');
-
-  if (audioToggle) {
-    audioToggle.addEventListener('click', () => {
-      const active = audio.toggle();
-      const stateLabel = audioToggle.querySelector('.audio-state');
-      if (active) {
-        audioToggle.classList.add('audio-active');
-        stateLabel.textContent = 'Audio On';
-        audio.playClick();
-        showToast('Subtle audio cues activated');
-      } else {
-        audioToggle.classList.remove('audio-active');
-        stateLabel.textContent = 'Audio Off';
-        showToast('Audio muted');
-      }
-    });
-  }
-
-  // Bind sound triggers
-  document.querySelectorAll('[data-sound]').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      if (el.getAttribute('data-sound') === 'hover') {
-        audio.playHover();
-      }
-    });
-    el.addEventListener('click', () => {
-      audio.playClick();
-    });
-  });
+  // Check if user prefers reduced motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // =========================================================================
-  // 2. SUBTLE AMBIENT CANVAS PARTICLES
+  // 1. AMBIENT CANVAS PARTICLES
   // =========================================================================
   const canvas = document.getElementById('cyber-canvas');
   if (canvas) {
@@ -171,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
       particles.push(new MinimalParticle());
     }
 
-    function animate() {
+    function animateParticles() {
       ctx.clearRect(0, 0, width, height);
 
       for (let a = 0; a < particles.length; a++) {
@@ -194,13 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
         particles[a].draw();
       }
 
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animateParticles);
     }
-    animate();
+    animateParticles();
   }
 
   // =========================================================================
-  // 3. MINIMAL CURSOR
+  // 2. MINIMAL CURSOR WITH MAGNETIC HOVER
   // =========================================================================
   const dot = document.getElementById('cursorDot');
   const ring = document.getElementById('cursorRing');
@@ -235,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4. SUBTLE 3D CARD TILT
+  // 3. SUBTLE 3D CARD TILT
   // =========================================================================
   const tiltCards = document.querySelectorAll('[data-tilt]');
   tiltCards.forEach(card => {
@@ -262,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 5. SUBTITLE TYPING LOOP
+  // 4. SUBTITLE TYPING LOOP
   // =========================================================================
   const typingEl = document.getElementById('typingText');
   if (typingEl) {
@@ -304,32 +224,66 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 6. SCROLL PROGRESS & REVEALS
+  // 5. PARALLAX SCROLL ENGINE & SCROLL PROGRESS
   // =========================================================================
   const header = document.getElementById('siteHeader');
   const scrollProg = document.getElementById('scrollProgress');
   const navItems = document.querySelectorAll('.nav-item');
   const sections = document.querySelectorAll('section');
+  const parallaxMesh = document.getElementById('parallaxMesh');
+  const parallaxOrb1 = document.getElementById('parallaxOrb1');
+  const parallaxOrb2 = document.getElementById('parallaxOrb2');
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
 
-  window.addEventListener('scroll', () => {
-    const top = window.pageYOffset;
-    const height = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (top / height) * 100;
+  let latestScrollY = window.pageYOffset;
+  let ticking = false;
 
+  function updateParallax() {
+    const scrollY = latestScrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight - windowHeight;
+    const progress = (scrollY / Math.max(docHeight, 1)) * 100;
+
+    // Header Blur Effect
     if (header) {
-      if (top > 40) header.classList.add('scrolled');
+      if (scrollY > 40) header.classList.add('scrolled');
       else header.classList.remove('scrolled');
     }
 
+    // Top Progress Line
     if (scrollProg) {
       scrollProg.style.width = `${progress}%`;
     }
 
-    // Scrollspy
+    // Parallax background glow elements
+    if (!prefersReducedMotion) {
+      if (parallaxMesh) {
+        parallaxMesh.style.transform = `translate3d(0, ${scrollY * 0.12}px, 0)`;
+      }
+      if (parallaxOrb1) {
+        parallaxOrb1.style.transform = `translate3d(0, ${scrollY * 0.22}px, 0)`;
+      }
+      if (parallaxOrb2) {
+        parallaxOrb2.style.transform = `translate3d(0, ${-scrollY * 0.15}px, 0)`;
+      }
+
+      // Parallax foreground elements
+      parallaxElements.forEach(el => {
+        const factor = parseFloat(el.getAttribute('data-parallax')) || 0.1;
+        const rect = el.getBoundingClientRect();
+        // Check if element is close to viewport
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const offset = (windowHeight / 2 - (rect.top + rect.height / 2)) * factor;
+          el.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+        }
+      });
+    }
+
+    // Active Scrollspy Navigation
     let activeSec = '';
     sections.forEach(sec => {
-      const sTop = sec.offsetTop - 160;
-      if (top >= sTop) {
+      const sTop = sec.offsetTop - 180;
+      if (scrollY >= sTop) {
         activeSec = sec.getAttribute('id');
       }
     });
@@ -340,9 +294,24 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('active');
       }
     });
-  });
 
-  // Intersection Observer
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    latestScrollY = window.pageYOffset;
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial trigger
+  updateParallax();
+
+  // =========================================================================
+  // 6. INTERSECTION OBSERVER REVEALS & METRIC COUNTERS
+  // =========================================================================
   const reveals = document.querySelectorAll('.reveal-item');
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -353,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
           entry.target.classList.add('in-view');
         }
 
-        const metrics = entry.target.querySelectorAll('.metric-number');
+        const metrics = entry.target.querySelectorAll('.stat-big-num, .metric-number');
         metrics.forEach(m => animateNumber(m));
 
         obs.unobserve(entry.target);
@@ -396,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. SKILLS FILTERING
   // =========================================================================
   const filterTabs = document.querySelectorAll('.filter-tab');
-  const skillCards = document.querySelectorAll('.skill-pill-card');
+  const skillCols = document.querySelectorAll('.skill-col');
 
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -405,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filter = tab.getAttribute('data-filter');
 
-      skillCards.forEach(card => {
+      skillCols.forEach(card => {
         const cat = card.getAttribute('data-category');
         if (filter === 'all' || cat === filter) {
           card.classList.remove('hidden');
@@ -458,7 +427,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function runCommand(rawCmd) {
     const cmd = rawCmd.trim().toLowerCase();
-    audio.playClick();
 
     if (cmd === 'clear') {
       termHistory.innerHTML = '';
@@ -512,7 +480,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.getElementById(targetId);
       if (target) {
         target.classList.add('active');
-        audio.playClick();
       }
     });
   });
@@ -550,7 +517,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuBtn && drawer) {
     menuBtn.addEventListener('click', () => {
       drawer.classList.add('open');
-      audio.playClick();
     });
   }
 
@@ -575,7 +541,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = copyBtn.getAttribute('data-copy');
       navigator.clipboard.writeText(email).then(() => {
         showToast('Email copied to clipboard');
-        audio.playClick();
       }).catch(() => {
         showToast('Email: afsalrahman768@gmail.com');
       });
@@ -601,7 +566,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      audio.playClick();
 
       const name = document.getElementById('userName').value;
       const email = document.getElementById('userEmail').value;

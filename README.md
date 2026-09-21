@@ -1,6 +1,6 @@
 # Afsal Rahman — Minimal Futuristic Digital Marketing Portfolio
 
-A refined, minimal futuristic web portfolio built with clean typography, generous whitespace, and subtle micro-interactions for an intuitive, UI/UX-focused user experience.
+A refined, minimal futuristic web portfolio built with **Bootstrap 5**, clean typography, generous whitespace, dynamic parallax scroll depth, and responsive micro-interactions for an intuitive user experience.
 
 ---
 
@@ -12,22 +12,37 @@ To preview the portfolio locally:
   cd "/Users/aswin/Downloads/Afsal Rahman Portfolio"
   python3 -m http.server 8080
   ```
-  Then open `http://localhost:8080` in Chrome, Safari, Firefox, or Edge.
+  Then navigate to `http://localhost:8080` in Chrome, Safari, Firefox, or Edge.
 
 ---
 
-## 🎨 UI/UX & Design Philosophy
-1. **Generous Whitespace & Breathing Room**:
-   - Expanded vertical section padding (130px–150px) and wide grid gutters for visual comfort.
-   - High legibility with `Inter` body text (line-height: 1.75) and `Space Grotesk` headers.
-   - Removed visual noise (harsh scanlines, terminal clutter) in favor of sleek, frosted glass cards with soft 1px borders.
+## 🎨 Key Features & Architecture
 
-2. **Refined Micro-Interactions**:
-   - **Subtle 3D Perspective Tilt**: Soft card tilt on mouse movement with natural reset physics.
-   - **Minimal Cursor**: Responsive dot and magnetic expanding ring.
-   - **Web Audio API Ambient Effects**: Toggleable, subtle clicks and hover tones (zero external audio files).
-   - **Animated Metric Counters**: Smooth number tick-ups upon entering the viewport.
-   - **Skill Matrix Filter**: Tabbed filtering (`All`, `Social & Ads`, `SEO & Analytics`, `Creative & CMS`) with smooth gradient progress bars.
-   - **Interactive Command Deck**: Minimal console supporting `about`, `experience`, `skills`, and `contact`.
-   - **Case Study Modals**: In-depth strategy blueprints for Garvo Clothing and H&H Premium Fitness Center.
-   - **Direct Contact Micro-Interactions**: One-click email copy with toast notification and pre-filled inquiry dispatch.
+1. **Bootstrap 5 Responsive Grid & Components**:
+   - Built on Bootstrap 5 CDN (`bootstrap.min.css` & `bootstrap.bundle.min.js`).
+   - Standardized 12-column responsive layout (`container`, `row`, `col-*`).
+   - Mobile navigation powered by Bootstrap 5 **Offcanvas** drawer.
+   - Case study overlays powered by Bootstrap 5 **Modals** with keyboard (`Escape`) and backdrop dismissal.
+   - Form inputs styled with custom dark-mode Bootstrap `.form-control` and `.form-select`.
+
+2. **Ultra-Minimal Hero Section**:
+   - Clean, spacious centered layout with generous whitespace.
+   - Status badge indicating availability and location (Kerala, India).
+   - Dynamic role typewriter animation.
+   - Responsive horizontal metrics strip structured with Bootstrap's grid (`col-6 col-sm-3`).
+   - Clean call-to-action buttons (`View Selected Work`, `Get In Touch`, and LinkedIn profile link).
+
+3. **Smooth Parallax Scroll Engine**:
+   - Background ambient glow orbs (`#parallaxMesh`, `#parallaxOrb1`, `#parallaxOrb2`) float at distinct scroll speeds using GPU-accelerated `translate3d` transforms.
+   - Foreground headers and elements translate with subtle depth based on their `data-parallax` coefficients.
+   - Accessibility-ready: automatically respects `prefers-reduced-motion: reduce`.
+
+4. **Zero Audio Clutter**:
+   - Audio buttons and Web Audio synthesizer completely removed for a silent, focused browsing experience.
+
+5. **Refined Micro-Interactions**:
+   - Custom minimal cursor with magnetic hover states.
+   - Perspective 3D card tilt with smooth spring-back damping.
+   - Animated counter numbers ticking up upon entering the viewport.
+   - Interactive CLI command deck supporting `about`, `skills`, `experience`, and `contact`.
+   - One-click copy email button with toast feedback.
