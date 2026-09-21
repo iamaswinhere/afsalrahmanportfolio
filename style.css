@@ -173,6 +173,17 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(56, 189, 248, 0.06);
 }
 
+/* Disable custom cursor animation on small screens & touch devices */
+@media (max-width: 991.98px), (pointer: coarse), (hover: none) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
 /* Spacing Standards */
 .page-section {
   padding: 130px 0;

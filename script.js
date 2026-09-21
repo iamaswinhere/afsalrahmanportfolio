@@ -120,38 +120,75 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 2. MINIMAL CURSOR WITH MAGNETIC HOVER
+  // 2. MINIMAL CURSOR WITH MAGNETIC HOVER (DESKTOP ONLY)
   // =========================================================================
   const dot = document.getElementById('cursorDot');
   const ring = document.getElementById('cursorRing');
+
+  const isSmallScreen = () => {
+    return window.innerWidth <= 991.98 || window.matchMedia('(pointer: coarse), (hover: none)').matches;
+  };
 
   if (dot && ring) {
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let ringX = mouseX;
     let ringY = mouseY;
+    let isRunning = false;
+
+    function loopCursor() {
+      if (!isSmallScreen()) {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        ring.style.left = `${ringX}px`;
+        ring.style.top = `${ringY}px`;
+        requestAnimationFrame(loopCursor);
+      } else {
+        isRunning = false;
+        dot.style.display = 'none';
+        ring.style.display = 'none';
+      }
+    }
+
+    function initCursor() {
+      if (isSmallScreen()) {
+        dot.style.display = 'none';
+        ring.style.display = 'none';
+        isRunning = false;
+      } else {
+        dot.style.display = 'block';
+        ring.style.display = 'block';
+        if (!isRunning) {
+          isRunning = true;
+          requestAnimationFrame(loopCursor);
+        }
+      }
+    }
 
     window.addEventListener('mousemove', (e) => {
+      if (isSmallScreen()) return;
       mouseX = e.clientX;
       mouseY = e.clientY;
       dot.style.left = `${mouseX}px`;
       dot.style.top = `${mouseY}px`;
+      if (!isRunning) {
+        isRunning = true;
+        requestAnimationFrame(loopCursor);
+      }
     });
-
-    function loopCursor() {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      ring.style.left = `${ringX}px`;
-      ring.style.top = `${ringY}px`;
-      requestAnimationFrame(loopCursor);
-    }
-    loopCursor();
 
     const hoverables = document.querySelectorAll('a, button, input, textarea, select, .filter-tab, .quick-chip, [data-tilt]');
     hoverables.forEach(el => {
-      el.addEventListener('mouseenter', () => ring.classList.add('cursor-active'));
-      el.addEventListener('mouseleave', () => ring.classList.remove('cursor-active'));
+      el.addEventListener('mouseenter', () => {
+        if (!isSmallScreen()) ring.classList.add('cursor-active');
+      });
+      el.addEventListener('mouseleave', () => {
+        if (!isSmallScreen()) ring.classList.remove('cursor-active');
+      });
     });
+
+    window.addEventListener('resize', initCursor);
+    initCursor();
   }
 
   // =========================================================================
