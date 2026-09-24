@@ -3,955 +3,312 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Afsal Rahman — Digital Marketing Strategist &amp; Content Creator</title>
-  <meta name="description" content="Portfolio of Afsal Rahman: BSc Computer Science graduate, Digital Marketing Strategist, and Content Creator specializing in Social Media Marketing, SEO, and Brand Growth.">
+  <title>Afsal Rahman | Digital Marketing Strategist</title>
+  <meta name="description" content="Portfolio of Afsal Rahman: Digital Marketing Strategist and Content Creator.">
   
-  <!-- Modern Typography Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   
-  <!-- Custom Minimal Stylesheet -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Boxicons for Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body class="minimal-theme">
+<body class="dark-theme">
 
-  <!-- Ambient Minimal Canvas & Parallax Glow Backdrop -->
-  <div id="canvas-container">
-    <canvas id="cyber-canvas"></canvas>
-    <div class="ambient-glow-mesh" id="parallaxMesh"></div>
-    <div class="glow-orb orb-1" id="parallaxOrb1"></div>
-    <div class="glow-orb orb-2" id="parallaxOrb2"></div>
-  </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <div class="container">
+      <a class="navbar-brand font-heading fw-bold" href="#">Afsal<span class="text-primary">.</span></a>
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class='bx bx-menu fs-1 text-light'></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center gap-3">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Expertise</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+          <li class="nav-item mt-2 mt-lg-0"><a class="btn btn-primary rounded-pill px-4" href="#contact">Let's Talk</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <!-- Custom Minimal Cursor -->
-  <div class="cursor-dot" id="cursorDot"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center" id="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container position-relative z-1">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 col-xl-7">
+          <div class="badge-custom mb-3 reveal-up">Available for New Projects</div>
+          <h1 class="display-3 font-heading fw-bold text-white mb-4 reveal-up delay-1">
+            Driving <span class="text-gradient">growth</span> through data & creative content.
+          </h1>
+          <p class="lead text-secondary mb-5 reveal-up delay-2">
+            Hi, I'm Afsal Rahman. A BSc Computer Science graduate turned Digital Marketing Strategist. I combine algorithmic insights with scroll-stopping content to elevate brands in the digital space.
+          </p>
+          <div class="d-flex flex-wrap gap-3 reveal-up delay-3">
+            <a href="#work" class="btn btn-primary rounded-pill px-5 py-3 fw-semibold">View My Work</a>
+            <a href="https://www.linkedin.com/in/afsalrahman-a-5b635034a/" target="_blank" class="btn btn-outline-light rounded-pill px-4 py-3 d-flex align-items-center gap-2">
+              <i class='bx bxl-linkedin fs-5'></i> LinkedIn
+            </a>
+          </div>
+          
+          <div class="stats-row mt-5 pt-4 border-top border-secondary border-opacity-25 d-flex gap-5 reveal-up delay-4">
+            <div class="stat-item">
+              <h3 class="font-heading fw-bold text-white mb-0">1.5+</h3>
+              <p class="text-secondary small mb-0">Years Experience</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="font-heading fw-bold text-white mb-0">2</h3>
+              <p class="text-secondary small mb-0">Major Brands</p>
+            </div>
+            <div class="stat-item">
+              <h3 class="font-heading fw-bold text-white mb-0">10+</h3>
+              <p class="text-secondary small mb-0">Tools Mastered</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-xl-5 reveal-left d-flex justify-content-center">
+          <div class="hero-image-fade position-relative">
+            <img src="AfsalRahman.svg" alt="Afsal Rahman" class="img-fluid bw-image" style="max-height: 600px; object-fit: contain;">
+            <div class="fade-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Sleek Top Navigation Bar (Bootstrap Container) -->
-  <header class="site-header" id="siteHeader">
-    <div class="container-xl d-flex align-items-center justify-content-between py-3">
+  <!-- About Section -->
+  <section class="py-10" id="about">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center reveal-up">
+          <h6 class="text-primary fw-semibold mb-2">ABOUT ME</h6>
+          <h2 class="font-heading fw-bold mb-4">The sweet spot between code & creative.</h2>
+          <p class="text-secondary mb-4 fs-5">
+            My journey isn't typical for a marketer. With a degree in Computer Science, my foundation is built on logic, algorithms, and data. However, my passion lies in storytelling and brand growth.
+          </p>
+          <p class="text-secondary mb-4 fs-5">
+            This unique background allows me to understand exactly how social media platforms tick beneath the surface—algorithms, SEO, and analytics—while crafting visually appealing, highly engaging content that resonates with human audiences.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Expertise Section -->
+  <section class="py-10 bg-darker position-relative overflow-hidden" id="services">
+    <div class="container position-relative z-1">
+      <div class="text-center max-w-2xl mx-auto mb-5 pb-lg-2 reveal-up">
+        <div class="badge-custom mb-3">Core Capabilities</div>
+        <h2 class="display-5 font-heading fw-bold text-white mb-3">
+          How I help brands <span class="text-gradient">grow &amp; scale</span>
+        </h2>
+        <p class="text-secondary fs-6">
+          High-performance digital strategies that bridge data-driven distribution with scroll-stopping creative storytelling.
+        </p>
+      </div>
       
-      <!-- Brand & Status Pill -->
-      <div class="d-flex align-items-center gap-3">
-        <a href="#hero" class="brand-link text-decoration-none">
-          <span class="brand-avatar">AR</span>
-          <span class="brand-name">Afsal Rahman</span>
-        </a>
-        <div class="status-pill d-none d-sm-flex align-items-center">
-          <span class="pulse-dot"></span>
-          <span class="status-text">Available for Roles</span>
+      <div class="row g-4">
+        <!-- Card 01 -->
+        <div class="col-md-6 col-lg-4 reveal-up delay-1">
+          <div class="service-card p-4 p-xl-5 rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="service-icon-box rounded-3">
+                  <i class='bx bx-share-alt'></i>
+                </div>
+                <span class="service-index font-heading">01</span>
+              </div>
+              <h4 class="font-heading fw-bold text-white mb-2">Social Media Strategy</h4>
+              <p class="service-subtitle text-muted small fw-medium mb-3">Audience Funnel &amp; Distribution</p>
+              <p class="text-secondary small mb-4">
+                Developing end-to-end multi-platform strategies that turn passive scrollers into loyal brand advocates and active customers.
+              </p>
+              <ul class="service-checklist list-unstyled mb-4">
+                <li><i class='bx bx-check'></i> Content calendar &amp; roadmap execution</li>
+                <li><i class='bx bx-check'></i> Brand voice &amp; aesthetic positioning</li>
+                <li><i class='bx bx-check'></i> Audience engagement &amp; community retention</li>
+              </ul>
+            </div>
+            <div class="service-card-footer pt-3 border-top border-secondary border-opacity-10 d-flex align-items-center justify-content-between">
+              <span class="text-muted small">Target Objective</span>
+              <span class="badge bg-secondary bg-opacity-10 text-white border border-secondary border-opacity-25 rounded-pill px-3 py-1 small">Reach &amp; Loyalty</span>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Desktop Nav -->
-      <nav class="main-nav d-none d-lg-flex align-items-center gap-4">
-        <a href="#about" class="nav-item text-decoration-none">About</a>
-        <a href="#experience" class="nav-item text-decoration-none">Experience</a>
-        <a href="#skills" class="nav-item text-decoration-none">Skills</a>
-        <a href="#campaigns" class="nav-item text-decoration-none">Work</a>
-        <a href="#terminal" class="nav-item text-decoration-none">Command Deck</a>
-        <a href="#contact" class="nav-item text-decoration-none">Contact</a>
-      </nav>
-
-      <!-- Actions -->
-      <div class="d-flex align-items-center gap-3">
-        <a href="#contact" class="header-cta-btn text-decoration-none d-none d-sm-inline-block">Get In Touch</a>
         
-        <!-- Bootstrap Offcanvas Trigger for Mobile -->
-        <button class="mobile-menu-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas" aria-label="Toggle navigation">
-          <span></span><span></span>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Scroll Progress Line -->
-    <div class="scroll-progress-line" id="scrollProgress"></div>
-  </header>
-
-  <!-- Mobile Offcanvas Menu (Bootstrap 5) -->
-  <div class="offcanvas offcanvas-end text-bg-dark border-0 custom-offcanvas" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
-    <div class="offcanvas-header border-bottom border-secondary border-opacity-25 p-4">
-      <div class="d-flex align-items-center gap-2" id="mobileNavOffcanvasLabel">
-        <span class="brand-avatar">AR</span>
-        <span class="fw-bold text-white">Afsal Rahman</span>
-      </div>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body p-4 d-flex flex-column justify-content-between">
-      <div class="d-flex flex-column gap-3 fs-5">
-        <a href="#about" class="drawer-nav-item" data-bs-dismiss="offcanvas">About</a>
-        <a href="#experience" class="drawer-nav-item" data-bs-dismiss="offcanvas">Experience</a>
-        <a href="#skills" class="drawer-nav-item" data-bs-dismiss="offcanvas">Skills</a>
-        <a href="#campaigns" class="drawer-nav-item" data-bs-dismiss="offcanvas">Work &amp; Campaigns</a>
-        <a href="#terminal" class="drawer-nav-item" data-bs-dismiss="offcanvas">Command Deck</a>
-        <a href="#contact" class="drawer-nav-item" data-bs-dismiss="offcanvas">Contact</a>
-      </div>
-      <div class="pt-4 border-top border-secondary border-opacity-25">
-        <div class="d-flex align-items-center gap-2 mb-3">
-          <span class="pulse-dot"></span>
-          <span class="text-success small fw-medium">Available for Opportunities</span>
+        <!-- Card 02 -->
+        <div class="col-md-6 col-lg-4 reveal-up delay-2">
+          <div class="service-card p-4 p-xl-5 rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="service-icon-box rounded-3">
+                  <i class='bx bx-video-recording'></i>
+                </div>
+                <span class="service-index font-heading">02</span>
+              </div>
+              <h4 class="font-heading fw-bold text-white mb-2">Content Creation</h4>
+              <p class="service-subtitle text-muted small fw-medium mb-3">High-Impact Visuals &amp; Reels</p>
+              <p class="text-secondary small mb-4">
+                Crafting visually compelling short-form video (Instagram Reels / TikTok) and graphic assets tailored to trend cycles and brand identity.
+              </p>
+              <ul class="service-checklist list-unstyled mb-4">
+                <li><i class='bx bx-check'></i> Short-form video scripting &amp; editing</li>
+                <li><i class='bx bx-check'></i> Canva &amp; Premiere promotional graphics</li>
+                <li><i class='bx bx-check'></i> Trend integration &amp; audio synchronization</li>
+              </ul>
+            </div>
+            <div class="service-card-footer pt-3 border-top border-secondary border-opacity-10 d-flex align-items-center justify-content-between">
+              <span class="text-muted small">Target Objective</span>
+              <span class="badge bg-secondary bg-opacity-10 text-white border border-secondary border-opacity-25 rounded-pill px-3 py-1 small">Virality &amp; CTR</span>
+            </div>
+          </div>
         </div>
-        <a href="#contact" class="btn btn-primary w-100" data-bs-dismiss="offcanvas">Get In Touch</a>
+        
+        <!-- Card 03 -->
+        <div class="col-md-6 col-lg-4 reveal-up delay-3">
+          <div class="service-card p-4 p-xl-5 rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="d-flex align-items-center justify-content-between mb-4">
+                <div class="service-icon-box rounded-3">
+                  <i class='bx bx-line-chart'></i>
+                </div>
+                <span class="service-index font-heading">03</span>
+              </div>
+              <h4 class="font-heading fw-bold text-white mb-2">SEO &amp; Analytics</h4>
+              <p class="service-subtitle text-muted small fw-medium mb-3">Data-Led Optimization &amp; ROI</p>
+              <p class="text-secondary small mb-4">
+                Combining a computer science foundation with digital analytics to optimize feed reach, monitor search indexes, and track conversions.
+              </p>
+              <ul class="service-checklist list-unstyled mb-4">
+                <li><i class='bx bx-check'></i> Algorithmic keyword &amp; hashtag indexing</li>
+                <li><i class='bx bx-check'></i> Google Analytics &amp; Meta Ads data tracking</li>
+                <li><i class='bx bx-check'></i> Funnel conversion &amp; campaign scalability</li>
+              </ul>
+            </div>
+            <div class="service-card-footer pt-3 border-top border-secondary border-opacity-10 d-flex align-items-center justify-content-between">
+              <span class="text-muted small">Target Objective</span>
+              <span class="badge bg-secondary bg-opacity-10 text-white border border-secondary border-opacity-25 rounded-pill px-3 py-1 small">ROI &amp; Conversions</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <main>
-    <!-- MINIMAL HERO SECTION WITH PARALLAX DEPTH -->
-    <section class="hero-section" id="hero">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-12 col-lg-10 col-xl-9 d-flex flex-column align-items-center">
+  <!-- Experience Section -->
+  <section class="py-10" id="experience">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0 reveal-left">
+          <h6 class="text-primary fw-semibold mb-2">EXPERIENCE</h6>
+          <h2 class="font-heading fw-bold mb-4">My Professional Journey</h2>
+          <p class="text-secondary">Hands-on experience working directly with brands to elevate their digital presence and drive conversions.</p>
+        </div>
+        
+        <div class="col-lg-8 reveal-right">
+          <div class="timeline">
+            <!-- Job 1 -->
+            <div class="timeline-item pb-5 position-relative">
+              <div class="timeline-dot bg-primary position-absolute"></div>
+              <div class="ms-5 ps-3">
+                <div class="d-flex flex-wrap align-items-center justify-content-between mb-2">
+                  <h4 class="font-heading fw-bold mb-0">Freelance Social Media Executive</h4>
+                  <span class="badge bg-secondary bg-opacity-25 text-light rounded-pill px-3 py-2 mt-2 mt-sm-0">1 Year (Freelance)</span>
+                </div>
+                <h6 class="text-primary mb-3">Garvo Clothing</h6>
+                <p class="text-secondary mb-3">Managed end-to-end social media operations for a dynamic fashion apparel brand. Maintained a refined aesthetic while driving community engagement.</p>
+                <ul class="text-secondary custom-list">
+                  <li>Oversaw social channels and maintained regular posting schedules.</li>
+                  <li>Produced engaging, brand-aligned graphics and promotional posts.</li>
+                  <li>Fostered community interaction, boosting retention and customer loyalty.</li>
+                </ul>
+              </div>
+            </div>
             
-            <!-- Location & Availability Badge -->
-            <div class="hero-status-pill reveal-item" data-parallax="0.18">
-              <span class="pulse-dot"></span>
-              <span class="status-pill-text">Digital Marketing &amp; Social Media Specialist · Kerala, India</span>
-            </div>
-
-            <!-- Minimal High-Impact Headline -->
-            <h1 class="hero-title reveal-item" data-parallax="0.14">
-              Driving measurable social growth through <span class="gradient-text">data &amp; creative content</span>.
-            </h1>
-
-            <!-- Typewriter Subtitle -->
-            <div class="hero-dynamic-subtitle reveal-item" data-parallax="0.10">
-              <span class="spec-label">Specialization:</span>
-              <span class="typing-text" id="typingText"></span>
-              <span class="typing-cursor">|</span>
-            </div>
-
-            <!-- Focused Biography -->
-            <p class="hero-bio reveal-item" data-parallax="0.07">
-              BSc Computer Science graduate combining algorithmic analysis with brand-focused social media marketing, high-impact content creation, and SEO. Experienced in elevating digital visibility for apparel retail and luxury wellness brands.
-            </p>
-
-            <!-- Action Links -->
-            <div class="hero-cta-group reveal-item" data-parallax="0.04">
-              <a href="#campaigns" class="btn btn-primary">
-                <span>View Selected Work</span>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-              <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-              <a href="https://linkedin.com/in/afsalrahman-a-5b635034a/" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-              </a>
-            </div>
-
-            <!-- Minimal Horizontal Metrics Strip (Bootstrap Responsive Grid) -->
-            <div class="hero-stats-minimal reveal-item w-100" data-parallax="0.02">
-              <div class="row g-3 g-md-4 justify-content-center align-items-center w-100 m-0">
-                <div class="col-6 col-sm-3">
-                  <div class="hero-stat-cell">
-                    <span class="stat-big-num" data-count="1.5" data-suffix=" Yrs">0</span>
-                    <span class="stat-sub-text">Field Experience</span>
-                  </div>
+            <!-- Job 2 -->
+            <div class="timeline-item position-relative">
+              <div class="timeline-dot bg-primary position-absolute"></div>
+              <div class="ms-5 ps-3">
+                <div class="d-flex flex-wrap align-items-center justify-content-between mb-2">
+                  <h4 class="font-heading fw-bold mb-0">Content Creator</h4>
+                  <span class="badge bg-secondary bg-opacity-25 text-light rounded-pill px-3 py-2 mt-2 mt-sm-0">6 Months (Contract)</span>
                 </div>
-                <div class="col-6 col-sm-3">
-                  <div class="hero-stat-cell">
-                    <span class="stat-big-num" data-count="2" data-suffix=" Brands">0</span>
-                    <span class="stat-sub-text">Garvo &amp; H&amp;H</span>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-3">
-                  <div class="hero-stat-cell">
-                    <span class="stat-big-num" data-count="10" data-suffix="+">0</span>
-                    <span class="stat-sub-text">Tools Mastered</span>
-                  </div>
-                </div>
-                <div class="col-6 col-sm-3">
-                  <div class="hero-stat-cell">
-                    <span class="stat-big-num">B.Sc.</span>
-                    <span class="stat-sub-text">Computer Science</span>
-                  </div>
-                </div>
+                <h6 class="text-primary mb-3">H&H Premium Fitness Center</h6>
+                <p class="text-secondary mb-3">Conceptualized and executed a high-energy content strategy to promote premium gym amenities, training programs, and exclusive offers.</p>
+                <ul class="text-secondary custom-list">
+                  <li>Created high-performing Instagram Reels and video campaigns.</li>
+                  <li>Showcased facility highlights and certified trainer expertise.</li>
+                  <li>Crafted copy and visuals for seasonal membership drives.</li>
+                </ul>
               </div>
             </div>
-
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 01: ABOUT -->
-    <section class="page-section" id="about">
-      <div class="container">
-        
-        <div class="section-header-minimal reveal-item" data-parallax="0.08">
-          <span class="section-kicker">01 // About Me</span>
-          <h2 class="section-headline">A computer science graduate with a passion for creative brand growth.</h2>
-        </div>
+  <!-- Tools & Skills -->
+  <section class="py-5 border-top border-bottom border-secondary border-opacity-10 bg-darker overflow-hidden">
+    <div class="container">
+      <h6 class="text-center text-secondary mb-4 small fw-semibold tracking-wider">TOOLS & TECHNOLOGIES I WORK WITH</h6>
+      <div class="d-flex flex-wrap justify-content-center gap-4 gap-md-5 opacity-75 align-items-center tool-icons">
+        <div class="text-center"><i class='bx bxl-meta fs-2'></i><div class="small mt-1">Meta Ads</div></div>
+        <div class="text-center"><i class='bx bxl-instagram fs-2'></i><div class="small mt-1">Instagram</div></div>
+        <div class="text-center"><i class='bx bxl-google fs-2'></i><div class="small mt-1">Google Analytics</div></div>
+        <div class="text-center"><i class='bx bx-edit fs-2'></i><div class="small mt-1">Canva</div></div>
+        <div class="text-center"><i class='bx bx-video-recording fs-2'></i><div class="small mt-1">Premiere Pro</div></div>
+        <div class="text-center"><i class='bx bx-search fs-2'></i><div class="small mt-1">SEO</div></div>
+        <div class="text-center"><i class='bx bx-code-alt fs-2'></i><div class="small mt-1">HTML/CSS</div></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="row g-4 g-lg-5 align-items-start">
+  <!-- CTA / Contact Section -->
+  <section class="py-10" id="contact">
+    <div class="container">
+      <div class="contact-box p-5 rounded-5 text-center position-relative overflow-hidden reveal-up">
+        <div class="contact-glow position-absolute"></div>
+        <div class="position-relative z-1">
+          <h2 class="display-5 font-heading fw-bold mb-3">Ready to scale your brand?</h2>
+          <p class="text-secondary mb-5 max-w-2xl mx-auto">
+            Whether you need a complete social media overhaul, engaging content creation, or data-driven ad strategies, I'm available for new opportunities.
+          </p>
+          <a href="mailto:afsalrahman768@gmail.com" class="btn btn-primary btn-lg rounded-pill px-5 fw-semibold shadow-primary">
+            Start a Conversation
+          </a>
           
-          <!-- Left Column Narrative -->
-          <div class="col-12 col-lg-7 about-narrative reveal-item" data-parallax="0.05">
-            <p class="lead-paragraph">
-              I am a <strong>BSc Computer Science graduate</strong> with practical frontline experience in <strong>Social Media Marketing</strong> and <strong>Content Creation</strong>.
-            </p>
-            <p>
-              My computer science foundation provides a distinct analytical perspective: understanding feed delivery algorithms, data workflows, user behavior metrics, and conversion funnels. Over the past 1.5 years, I have translated this technical rigor into creative social media execution.
-            </p>
-            <p>
-              I have worked as a <strong>Freelance Social Media Executive for Garvo Clothing</strong> for 1 year and as a <strong>Content Creator for H&amp;H Premium Fitness Center</strong> for 6 months. I enjoy creating engaging, brand-focused content and discovering how strategic social media builds long-term visibility and commercial growth.
-            </p>
-
-            <!-- Highlights Grid (Bootstrap 2-col) -->
-            <div class="row g-3 mt-4">
-              <div class="col-12 col-sm-6">
-                <div class="highlight-box h-100">
-                  <div class="highlight-icon">⚡</div>
-                  <div class="highlight-title">Algorithmic Insight</div>
-                  <div class="highlight-desc">Deep grasp of feed mechanics, search indexing, and audience targeting algorithms.</div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="highlight-box h-100">
-                  <div class="highlight-icon">🎨</div>
-                  <div class="highlight-title">Aesthetic Standards</div>
-                  <div class="highlight-desc">Clean, modern visual layouts designed for scroll-stopping engagement.</div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="highlight-box h-100">
-                  <div class="highlight-icon">📊</div>
-                  <div class="highlight-title">Data-Backed Growth</div>
-                  <div class="highlight-desc">Continuous metric monitoring via Google Analytics, Search Console, and Meta Ads.</div>
-                </div>
-              </div>
-              <div class="col-12 col-sm-6">
-                <div class="highlight-box h-100">
-                  <div class="highlight-icon">🎯</div>
-                  <div class="highlight-title">Audience Psychology</div>
-                  <div class="highlight-desc">Content tailored specifically to the tone, needs, and lifestyle of the consumer.</div>
-                </div>
-              </div>
-            </div>
+          <div class="d-flex justify-content-center gap-4 mt-5">
+            <a href="https://www.linkedin.com/in/afsalrahman-a-5b635034a/" target="_blank" class="social-link"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.instagram.com/afsaleeeee_/" target="_blank" class="social-link"><i class='bx bxl-instagram'></i></a>
+            <a href="mailto:afsalrahman768@gmail.com" class="social-link"><i class='bx bx-envelope'></i></a>
           </div>
-
-          <!-- Right Column Pillars -->
-          <div class="col-12 col-lg-5 about-pillars d-flex flex-column gap-4 reveal-item" data-parallax="0.03">
-            <div class="pillar-card" data-tilt>
-              <div class="pillar-num">Pillar 01</div>
-              <h3 class="pillar-title">Social Media Marketing</h3>
-              <p class="pillar-text">
-                Developing comprehensive social media strategies, audience-focused promotional campaigns, consistent brand messaging, and genuine community engagement that turns casual viewers into brand advocates.
-              </p>
-              <ul class="pillar-list">
-                <li>Content calendar planning &amp; roadmap execution</li>
-                <li>Audience interaction and community retention</li>
-                <li>Cross-platform brand consistency</li>
-                <li>Promotional offer messaging &amp; product drops</li>
-              </ul>
-            </div>
-
-            <div class="pillar-card" data-tilt>
-              <div class="pillar-num">Pillar 02</div>
-              <h3 class="pillar-title">Content Creation</h3>
-              <p class="pillar-text">
-                Crafting simple, visually engaging, and highly relevant content tailored to brand identity. Specializing in dynamic short-form videos (Reels), creative graphics, and lifestyle storytelling.
-              </p>
-              <ul class="pillar-list">
-                <li>Instagram Reels &amp; short-form video scripting</li>
-                <li>Canva graphic production &amp; aesthetic layouts</li>
-                <li>Promotional campaign concepts &amp; copywriting</li>
-                <li>Trend adoption and audio timing</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Content Approach Quote -->
-        <div class="row mt-5">
-          <div class="col-12">
-            <div class="quote-strip reveal-item" data-parallax="0.04">
-              <div class="quote-content">
-                <span class="quote-mark">“</span>
-                <p>
-                  I focus on content that is simple, visually engaging, relevant to the target audience, and consistent with the brand's identity. Different industries require distinct visual styles and nuanced communication approaches.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 02: EXPERIENCE -->
-    <section class="page-section" id="experience">
-      <div class="container">
-        
-        <div class="section-header-minimal reveal-item" data-parallax="0.08">
-          <span class="section-kicker">02 // Experience</span>
-          <h2 class="section-headline">Practical frontline experience across retail and fitness brands.</h2>
-        </div>
-
-        <div class="row g-4">
-          
-          <!-- Experience Item 1 -->
-          <div class="col-12">
-            <div class="experience-card reveal-item" data-tilt>
-              <div class="exp-header">
-                <div class="exp-role-group">
-                  <h3 class="exp-role">Freelance Social Media Executive</h3>
-                  <div class="exp-company">Garvo Clothing</div>
-                </div>
-                <div class="exp-meta-badge">
-                  <span class="exp-duration">1 Year</span>
-                  <span class="exp-type">Freelance</span>
-                </div>
-              </div>
-
-              <p class="exp-summary">
-                Managed social media operations and developed original content concepts for Garvo Clothing, maintaining an active, aesthetically refined presence for the apparel brand.
-              </p>
-
-              <div class="row g-3 my-3">
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">01</span>
-                    <div>
-                      <strong>Social Media Management:</strong> Oversaw social channels, developed creative content ideas, and maintained regular posting schedules.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">02</span>
-                    <div>
-                      <strong>Brand-Aligned Communication:</strong> Produced engaging posts and promotional content consistent with the clothing line’s brand identity.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">03</span>
-                    <div>
-                      <strong>Audience Engagement:</strong> Fostered community interaction, responding to customer questions and supporting positive social engagement.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">04</span>
-                    <div>
-                      <strong>Visual Appeal:</strong> Delivered creative, visually appealing, and audience-friendly graphics calibrated for mobile social feeds.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="exp-tags-row">
-                <span class="mini-tag">Fashion Apparel</span>
-                <span class="mini-tag">Social Media Management</span>
-                <span class="mini-tag">Content Strategy</span>
-                <span class="mini-tag">Community Building</span>
-                <span class="mini-tag">Visual Curation</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Experience Item 2 -->
-          <div class="col-12">
-            <div class="experience-card reveal-item" data-tilt>
-              <div class="exp-header">
-                <div class="exp-role-group">
-                  <h3 class="exp-role">Content Creator</h3>
-                  <div class="exp-company">H&amp;H Premium Fitness Center</div>
-                </div>
-                <div class="exp-meta-badge">
-                  <span class="exp-duration">6 Months</span>
-                  <span class="exp-type">Contract</span>
-                </div>
-              </div>
-
-              <p class="exp-summary">
-                Conceptualized and produced social media content for a premium fitness brand, positioning the gym's top-tier amenities, training programs, and exclusive membership offers.
-              </p>
-
-              <div class="row g-3 my-3">
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">01</span>
-                    <div>
-                      <strong>Short-Form Video &amp; Reels:</strong> Conceived concepts for Instagram posts, reels, and video campaigns highlighting training routines and member energy.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">02</span>
-                    <div>
-                      <strong>Facility &amp; Service Showcases:</strong> Developed promotional content featuring gym equipment, fitness programs, and certified trainer expertise.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">03</span>
-                    <div>
-                      <strong>Offer Promotions:</strong> Crafted promotional campaigns for seasonal membership drives, personal training packages, and guest passes.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="point-col">
-                    <span class="point-num">04</span>
-                    <div>
-                      <strong>Modern Communication:</strong> Emphasized clear, motivating, and modern messaging tailored to fitness-conscious demographics.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="exp-tags-row">
-                <span class="mini-tag">Fitness &amp; Wellness</span>
-                <span class="mini-tag">Instagram Reels</span>
-                <span class="mini-tag">Promotional Campaigns</span>
-                <span class="mini-tag">Service Marketing</span>
-                <span class="mini-tag">Video Ideation</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education Foundation Item -->
-          <div class="col-12">
-            <div class="experience-card reveal-item" data-tilt>
-              <div class="exp-header">
-                <div class="exp-role-group">
-                  <h3 class="exp-role">BSc in Computer Science</h3>
-                  <div class="exp-company">Undergraduate Degree</div>
-                </div>
-                <div class="exp-meta-badge">
-                  <span class="exp-duration">Graduate</span>
-                  <span class="exp-type">Academic Foundation</span>
-                </div>
-              </div>
-
-              <p class="exp-summary">
-                Rigorous foundation in computer science and software systems. Provides an analytical edge in understanding search engine algorithms, technical SEO web standards, data analysis, and web architectures.
-              </p>
-
-              <div class="exp-tags-row">
-                <span class="mini-tag">Computer Science</span>
-                <span class="mini-tag">Search Algorithms</span>
-                <span class="mini-tag">Analytics &amp; Logic</span>
-                <span class="mini-tag">Technical SEO</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 03: SKILLS -->
-    <section class="page-section" id="skills">
-      <div class="container">
-        
-        <div class="section-header-minimal reveal-item" data-parallax="0.08">
-          <span class="section-kicker">03 // Skills &amp; Tools</span>
-          <h2 class="section-headline">A balanced arsenal across marketing, analytics, and visual tools.</h2>
-        </div>
-
-        <!-- Filter Chips -->
-        <div class="filter-tabs-strip reveal-item mb-4">
-          <button class="filter-tab active" data-filter="all">All Competencies</button>
-          <button class="filter-tab" data-filter="marketing">Social &amp; Ads</button>
-          <button class="filter-tab" data-filter="seo-analytics">SEO &amp; Analytics</button>
-          <button class="filter-tab" data-filter="creative">Creative &amp; CMS</button>
-        </div>
-
-        <!-- Skills Grid (Bootstrap responsive columns) -->
-        <div class="row g-3 g-md-4 reveal-item" id="skillsGrid">
-          
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="marketing">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Social Media Marketing</span>
-                <span class="skill-percent">95%</span>
-              </div>
-              <p class="skill-description">Content calendars, brand communication, audience engagement, and promotion strategy.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 95%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="creative">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Content Creation &amp; Reels</span>
-                <span class="skill-percent">92%</span>
-              </div>
-              <p class="skill-description">Short-form video ideation, lifestyle photo concepts, promotional copywriting.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 92%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="seo-analytics">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Search Engine Optimization (SEO)</span>
-                <span class="skill-percent">88%</span>
-              </div>
-              <p class="skill-description">On-page optimization, keyword research, meta structuring, search visibility.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 88%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="creative">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Canva Design Suite</span>
-                <span class="skill-percent">94%</span>
-              </div>
-              <p class="skill-description">Brand identity templates, promotional graphics, social media carousel layouts.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 94%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="creative">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">WordPress</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <p class="skill-description">CMS management, landing page content formatting, and blog SEO structuring.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 85%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="seo-analytics">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Google Analytics</span>
-                <span class="skill-percent">86%</span>
-              </div>
-              <p class="skill-description">User behavior tracking, session metrics, traffic source attribution, and insights.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 86%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="seo-analytics">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Google Search Console</span>
-                <span class="skill-percent">84%</span>
-              </div>
-              <p class="skill-description">Search queries inspection, indexing diagnostics, impressions, and CTR monitoring.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 84%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="marketing">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Meta Ads (Facebook &amp; Instagram)</span>
-                <span class="skill-percent">87%</span>
-              </div>
-              <p class="skill-description">Ad setup, targeting parameters, promotional post boosting, and creative testing.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 87%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="marketing">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Google Ads</span>
-                <span class="skill-percent">82%</span>
-              </div>
-              <p class="skill-description">Search ad fundamentals, keyword intent alignment, and conversion copywriting.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 82%;"></div></div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-lg-4 skill-col" data-category="marketing">
-            <div class="skill-pill-card h-100" data-tilt>
-              <div class="skill-card-top">
-                <span class="skill-name">Mailchimp</span>
-                <span class="skill-percent">85%</span>
-              </div>
-              <p class="skill-description">Email campaign drafting, audience segmenting, and newsletter promotional distribution.</p>
-              <div class="skill-bar-track"><div class="skill-bar-fill" style="--w: 85%;"></div></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 04: WORK & CAMPAIGNS -->
-    <section class="page-section" id="campaigns">
-      <div class="container">
-        
-        <div class="section-header-minimal reveal-item" data-parallax="0.08">
-          <span class="section-kicker">04 // Selected Work</span>
-          <h2 class="section-headline">Featured brand executions and case studies.</h2>
-        </div>
-
-        <div class="row g-4 g-lg-5 mb-4">
-          
-          <!-- Card 1: Garvo Clothing -->
-          <div class="col-12 col-lg-6">
-            <div class="showcase-card h-100 reveal-item" data-tilt>
-              <div class="showcase-preview-frame">
-                <div class="mockup-header">
-                  <span class="mock-tag">Fashion Brand</span>
-                  <span class="mock-client">@garvoclothing</span>
-                </div>
-                <div class="mockup-screen fashion-bg">
-                  <div class="mockup-content-wrap">
-                    <div class="mockup-badge">Streetwear Curation</div>
-                    <div class="mockup-title">Apparel Collection Launch</div>
-                    <div class="mockup-stats">
-                      <span>♥ High Engagement</span>
-                      <span>·</span>
-                      <span>Drop 04</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="showcase-body">
-                <div class="showcase-meta">
-                  <span class="showcase-brand-name">Garvo Clothing</span>
-                  <span class="showcase-tenure">1 Year Duration</span>
-                </div>
-                <h3 class="showcase-headline">Social Media Management &amp; Content Strategy</h3>
-                <p class="showcase-copy">
-                  Spearheaded social content and promotional messaging for Garvo Clothing. Structured a cohesive visual presence, maintained frequent audience touchpoints, and supported brand growth across fashion enthusiasts.
-                </p>
-                
-                <div class="showcase-highlights">
-                  <div class="highlight-item">
-                    <strong>Content Direction:</strong> Curated modern, lifestyle-focused visuals aligned with clothing aesthetics.
-                  </div>
-                  <div class="highlight-item">
-                    <strong>Promotions:</strong> Created promotional messaging for fresh apparel releases and seasonal offers.
-                  </div>
-                </div>
-
-                <!-- Bootstrap Modal Trigger -->
-                <button class="btn btn-outline mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#garvoModal">
-                  <span>View Case Overview</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2: H&H Premium Fitness Center -->
-          <div class="col-12 col-lg-6">
-            <div class="showcase-card h-100 reveal-item" data-tilt>
-              <div class="showcase-preview-frame">
-                <div class="mockup-header">
-                  <span class="mock-tag">Fitness &amp; Gym</span>
-                  <span class="mock-client">@hhfitnesscenter</span>
-                </div>
-                <div class="mockup-screen fitness-bg">
-                  <div class="mockup-content-wrap">
-                    <div class="mockup-badge">Premium Wellness</div>
-                    <div class="mockup-title">Facility &amp; Reels Campaign</div>
-                    <div class="mockup-stats">
-                      <span>♥ Member Energy</span>
-                      <span>·</span>
-                      <span>High Retention</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="showcase-body">
-                <div class="showcase-meta">
-                  <span class="showcase-brand-name">H&amp;H Premium Fitness</span>
-                  <span class="showcase-tenure">6 Months Duration</span>
-                </div>
-                <h3 class="showcase-headline">Premium Positioning &amp; Dynamic Reels</h3>
-                <p class="showcase-copy">
-                  Created social media content emphasizing the gym's premium positioning, world-class training facilities, personal coaching, and targeted membership promotional campaigns.
-                </p>
-                
-                <div class="showcase-highlights">
-                  <div class="highlight-item">
-                    <strong>Reels &amp; Video:</strong> Scripted and developed ideas for dynamic workout reels and facility walk-throughs.
-                  </div>
-                  <div class="highlight-item">
-                    <strong>Campaign Offers:</strong> Engineered promotional campaigns for seasonal membership drives and offers.
-                  </div>
-                </div>
-
-                <!-- Bootstrap Modal Trigger -->
-                <button class="btn btn-outline mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#hhModal">
-                  <span>View Case Overview</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Portfolio Note -->
-        <div class="row">
-          <div class="col-12">
-            <div class="portfolio-note-box reveal-item">
-              <div class="note-icon">ℹ️</div>
-              <div class="note-text">
-                <strong>Professional Portfolio Note:</strong> This portfolio reflects verified practical experience and competencies. Any future spec, concept, or sample exercises will be clearly designated as sample work rather than client commissions.
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 05: MINIMAL COMMAND DECK (CLI) -->
-    <section class="page-section" id="terminal">
-      <div class="container">
-        
-        <div class="section-header-minimal reveal-item" data-parallax="0.08">
-          <span class="section-kicker">05 // Command Deck</span>
-          <h2 class="section-headline">Quick interactive command palette.</h2>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-10 col-xl-9">
-            <div class="command-deck-window reveal-item">
-              <div class="deck-top-bar">
-                <div class="deck-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="deck-title">afsal@portfolio ~ interactive console</div>
-              </div>
-
-              <div class="deck-body" id="terminalScreen">
-                <div class="deck-intro">
-                  <p class="deck-dim">Welcome to the interactive console. Type a command or click one of the quick suggestions below.</p>
-                </div>
-                
-                <div class="deck-history" id="terminalHistory"></div>
-
-                <div class="deck-input-row">
-                  <span class="deck-prompt">&gt;</span>
-                  <input type="text" id="terminalInput" class="deck-input" placeholder="Type 'about', 'skills', 'experience', 'contact' or 'help'..." autocomplete="off" spellcheck="false">
-                </div>
-              </div>
-
-              <div class="deck-quick-chips">
-                <span class="chips-hint">Suggestions:</span>
-                <button class="quick-chip" data-cmd="about">about</button>
-                <button class="quick-chip" data-cmd="experience">experience</button>
-                <button class="quick-chip" data-cmd="skills">skills</button>
-                <button class="quick-chip" data-cmd="contact">contact</button>
-                <button class="quick-chip" data-cmd="clear">clear</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 06: CONTACT -->
-    <section class="page-section" id="contact">
-      <div class="container">
-        
-        <div class="section-header-minimal reveal-item" data-parallax="0.08">
-          <span class="section-kicker">06 // Contact</span>
-          <h2 class="section-headline">Let's build something exceptional together.</h2>
-        </div>
-
-        <div class="row g-4 g-lg-5 align-items-start">
-          
-          <!-- Contact Details (Left Col) -->
-          <div class="col-12 col-lg-5 reveal-item">
-            <p class="contact-lead-text">
-              I am open to full-time roles, strategic freelance opportunities, and collaborative growth projects in Digital Marketing, Social Media, and Content Creation.
-            </p>
-
-            <div class="contact-channel-card" data-tilt>
-              <div class="channel-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              </div>
-              <div class="channel-details">
-                <span class="channel-label">Direct Email</span>
-                <a href="mailto:afsalrahman768@gmail.com" class="channel-value">afsalrahman768@gmail.com</a>
-              </div>
-              <button class="copy-action-btn" id="copyEmailBtn" data-copy="afsalrahman768@gmail.com" title="Copy Email Address">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span>Copy</span>
-              </button>
-            </div>
-
-            <div class="contact-channel-card" data-tilt>
-              <div class="channel-icon linkedin-bg">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-              </div>
-              <div class="channel-details">
-                <span class="channel-label">LinkedIn Profile</span>
-                <a href="https://linkedin.com/in/afsalrahman-a-5b635034a/" target="_blank" rel="noopener noreferrer" class="channel-value">linkedin.com/in/afsalrahman-a-5b635034a/</a>
-              </div>
-              <a href="https://linkedin.com/in/afsalrahman-a-5b635034a/" target="_blank" rel="noopener noreferrer" class="open-link-btn" title="Open LinkedIn">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </a>
-            </div>
-
-            <div class="location-badge-box">
-              <span class="location-dot"></span>
-              <span>Based in Kerala, India — Available for onsite and global remote roles</span>
-            </div>
-          </div>
-
-          <!-- Contact Form (Right Col) -->
-          <div class="col-12 col-lg-7 reveal-item">
-            <form id="contactForm" class="clean-form">
-              
-              <div class="row g-3">
-                <div class="col-12 col-sm-6">
-                  <div class="form-field">
-                    <label for="userName">Your Name / Organization</label>
-                    <input type="text" id="userName" class="form-control" placeholder="e.g. Alex Miller" required>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-6">
-                  <div class="form-field">
-                    <label for="userEmail">Email Address</label>
-                    <input type="email" id="userEmail" class="form-control" placeholder="e.g. alex@brand.com" required>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-field mt-3">
-                <label for="projectType">Inquiry Type</label>
-                <select id="projectType" class="form-select">
-                  <option value="Full-Time Position">Full-Time Position (Digital Marketing / Social Media)</option>
-                  <option value="Freelance Campaign">Freelance Campaign / Brand Strategy</option>
-                  <option value="Content Creation &amp; Reels">Content Creation &amp; Short-Form Video</option>
-                  <option value="SEO &amp; Web Visibility">SEO &amp; Web Visibility Optimization</option>
-                  <option value="General Conversation">General Conversation</option>
-                </select>
-              </div>
-
-              <div class="form-field mt-3">
-                <label for="userMessage">Message</label>
-                <textarea id="userMessage" class="form-control" rows="5" placeholder="Share your project scope, goals, or open role parameters..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary form-submit-btn mt-4">
-                <span>Send Message</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </button>
-
-              <div class="form-feedback mt-2" id="formFeedback"></div>
-            </form>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- MINIMAL FOOTER -->
-  <footer class="minimal-footer">
-    <div class="container footer-inner">
-      <div class="row align-items-center justify-content-between g-3">
-        <div class="col-12 col-md-auto footer-copy-text">
-          &copy; <span id="currentYear"></span> Afsal Rahman. Minimalist portfolio built with Bootstrap 5, parallax scroll physics, and clean typography.
-        </div>
-        <div class="col-12 col-md-auto footer-back-to-top">
-          <button id="backToTopBtn" class="to-top-btn">
-            <span>Back to Top</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-          </button>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top border-secondary border-opacity-10 text-center">
+    <div class="container">
+      <p class="text-secondary small mb-0">&copy; 2024 Afsal Rahman. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- BOOTSTRAP 5 MODALS FOR CASE STUDIES -->
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
-  <!-- Modal: Garvo Clothing -->
-  <div class="modal fade custom-bootstrap-modal" id="garvoModal" tabindex="-1" aria-labelledby="garvoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <span class="modal-kicker">Case Overview</span>
-            <h3 class="modal-title h5 mb-0" id="garvoModalLabel">Garvo Clothing — Social Media Operations</h3>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-section mb-4">
-            <h4>Role &amp; Context</h4>
-            <p>Served as Freelance Social Media Executive for Garvo Clothing for 1 year. The mission was to cultivate an active, stylish brand presence for their apparel line in a competitive online marketplace.</p>
-          </div>
-          <div class="modal-section mb-4">
-            <h4>Execution Pillars</h4>
-            <ul class="mb-0">
-              <li><strong>Content Roadmapping:</strong> Designed structured weekly calendars balancing new product drops, lifestyle photography, and promotional announcements.</li>
-              <li><strong>Visual Uniformity:</strong> Standardized typography and color palettes to ensure high visual consistency across the entire social grid.</li>
-              <li><strong>Community Interaction:</strong> Handled daily inquiries, comments, and direct messages to foster responsive engagement.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>Key Takeaways</h4>
-            <p class="mb-0">Maintained consistent brand visibility for 12 months, building a recognizable aesthetic identity and an active social community.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: H&H Fitness -->
-  <div class="modal fade custom-bootstrap-modal" id="hhModal" tabindex="-1" aria-labelledby="hhModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div>
-            <span class="modal-kicker">Case Overview</span>
-            <h3 class="modal-title h5 mb-0" id="hhModalLabel">H&amp;H Premium Fitness — Content Creation</h3>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="modal-section mb-4">
-            <h4>Role &amp; Context</h4>
-            <p>Created content for H&amp;H Premium Fitness Center for 6 months, focusing on premium brand positioning, modern facility promotion, and membership acquisition.</p>
-          </div>
-          <div class="modal-section mb-4">
-            <h4>Execution Pillars</h4>
-            <ul class="mb-0">
-              <li><strong>Reels &amp; Short-Form Video:</strong> Developed video concepts emphasizing workout intensity, trainer form tips, and state-of-the-art machinery.</li>
-              <li><strong>Offer Campaigns:</strong> Engineered promotional graphics and copy for seasonal gym packages, personal training offers, and guest passes.</li>
-              <li><strong>Aesthetic Communication:</strong> Elevated the brand perception from a regular gym to an elite wellness destination.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>Key Takeaways</h4>
-            <p class="mb-0">Strengthened the gym’s local reputation and drove continuous membership and inquiry engagement across social platforms.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div class="minimal-toast" id="minimalToast"></div>
-
-  <!-- Bootstrap 5 JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-  <!-- Custom App Script -->
+  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
